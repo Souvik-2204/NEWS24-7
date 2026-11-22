@@ -1,5 +1,45 @@
 [
   {
+    "id": "log_1795351505879_13hgo",
+    "timestamp": "2026-11-22T12:45:05.879Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 1
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795350608778_8f9lm",
+    "timestamp": "2026-11-22T12:30:08.778Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 3
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795349706756_yl1vp",
+    "timestamp": "2026-11-22T12:15:06.756Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 4
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795348806433_dicch",
+    "timestamp": "2026-11-22T12:00:06.433Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 2
+    },
+    "userId": null,
+    "role": null
+  },
+  {
     "id": "log_1795347904640_q093i",
     "timestamp": "2026-11-22T11:45:04.640Z",
     "action": "LIVE_NEWS_SYNC",
