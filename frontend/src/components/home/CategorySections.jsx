@@ -39,12 +39,12 @@ export const CategorySections = () => {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
       {/* Category Tabs Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-zinc-800 gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#ded5c2] gap-4">
         <div>
-          <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest block">
+          <span className="text-[11px] font-bold text-[#946638] uppercase tracking-widest block">
             Specialized Desks
           </span>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mt-1">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1c1917] mt-1">
             Section Deep-Dives
           </h2>
         </div>
@@ -55,10 +55,10 @@ export const CategorySections = () => {
             <button
               key={sec.id}
               onClick={() => setSelectedSection(sec.id)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-colors ${
                 selectedSection === sec.id
-                  ? 'bg-amber-400 text-black shadow-sm'
-                  : 'bg-zinc-900/80 text-gray-400 hover:text-white hover:bg-zinc-800'
+                  ? 'bg-[#946638] text-white shadow-sm'
+                  : 'bg-[#f2ece0] text-[#574f45] hover:bg-[#e8dece] hover:text-[#1c1917]'
               }`}
             >
               {sec.name}
@@ -67,82 +67,77 @@ export const CategorySections = () => {
         </div>
       </div>
 
-      {/* Grid of articles for selected section */}
+      {/* Grid of articles for selected category */}
       {loading ? (
-        <div className="py-16 text-center text-gray-500">
-          <div className="inline-block w-6 h-6 border-2 border-amber-400 border-t-transparent rounded-full animate-spin mb-2" />
-          <p className="text-xs">Loading {selectedSection} desk...</p>
+        <div className="py-20 text-center text-[#786f63]">
+          <div className="inline-block w-7 h-7 border-2 border-[#946638] border-t-transparent rounded-full animate-spin mb-2" />
+          <p className="text-xs">Fetching latest {selectedSection} dispatches...</p>
         </div>
       ) : articles.length === 0 ? (
-        <div className="py-16 text-center text-gray-400">
-          <p className="font-serif text-lg">No dispatches in this section at this moment.</p>
-          <p className="text-xs text-gray-500 mt-1">Our bureau is preparing upcoming investigations.</p>
+        <div className="py-16 text-center text-[#786f63] bg-white rounded-2xl border border-[#ded5c2] mt-6">
+          <p className="text-xs">No dispatches available under this desk right now.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {articles.map((art) => (
             <div
               key={art.id}
-              className="glass-card glass-card-hover rounded-2xl p-5 border border-zinc-800/80 flex flex-col justify-between group"
+              className="bg-white rounded-2xl p-5 border border-[#ded5c2] hover:border-[#bda588] shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
-                <div className="relative h-48 rounded-xl overflow-hidden mb-4">
+                <div className="relative rounded-xl overflow-hidden h-44 mb-4 bg-[#ede5d6]">
                   <img
                     src={art.imageUrl}
                     alt={art.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 flex items-center space-x-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-zinc-900/90 text-amber-400 border border-amber-400/30">
+                  <div className="absolute top-2 left-2 flex items-center space-x-1">
+                    <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/95 text-[#784f27] border border-[#d8ccb8] shadow-sm">
                       {art.category}
                     </span>
                     {art.accessLevel && art.accessLevel !== 'free' && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-black flex items-center space-x-1">
-                        <Lock className="w-3 h-3 text-black" />
+                      <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#946638] text-white flex items-center space-x-0.5 shadow-sm">
+                        <Lock className="w-2.5 h-2.5" />
                         <span>{art.accessLevel}</span>
                       </span>
                     )}
                   </div>
-
                   <button
                     onClick={() => toggleBookmark(art.id)}
-                    className="absolute top-3 right-3 p-2 rounded-full bg-zinc-900/80 hover:bg-zinc-800 text-gray-300 hover:text-amber-400 transition-colors"
+                    className="absolute top-2 right-2 p-1.5 rounded-full bg-white/90 hover:bg-white text-[#574f45] hover:text-[#946638] shadow-sm transition-colors"
                   >
-                    <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(art.id) ? 'fill-amber-400 text-amber-400' : ''}`} />
+                    <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(art.id) ? 'fill-[#946638] text-[#946638]' : ''}`} />
                   </button>
                 </div>
 
                 <Link to={`/article/${art.slug || art.id}`}>
-                  <h3 className="font-serif text-base font-bold text-white group-hover:text-amber-400 transition-colors leading-snug mb-2">
+                  <h3 className="font-serif text-base font-bold text-[#1c1917] group-hover:text-[#946638] transition-colors line-clamp-2 leading-snug mb-2">
                     {art.title}
                   </h3>
                 </Link>
 
-                <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed mb-4">
+                <p className="text-xs text-[#574f45] line-clamp-2 leading-relaxed">
                   {art.summary}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-zinc-800/60 text-xs text-gray-500">
-                <span>By {art.author?.name || 'Correspondent'}</span>
-                <span className="text-amber-400/90 font-mono text-[11px]">{art.readTime || '5 min'}</span>
+              <div className="flex items-center justify-between text-[11px] text-[#786f63] pt-3 mt-4 border-t border-[#ded5c2]">
+                <div className="flex items-center space-x-1">
+                  <Clock className="w-3 h-3 text-[#946638]" />
+                  <span>{art.readTime || '5 min read'}</span>
+                </div>
+                <Link
+                  to={`/article/${art.slug || art.id}`}
+                  className="font-semibold text-[#946638] hover:underline flex items-center space-x-1 text-xs"
+                >
+                  <span>Read Article</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
       )}
-
-      {/* Link to full category */}
-      <div className="text-center mt-8">
-        <Link
-          to={`/${selectedSection}`}
-          className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs font-semibold text-gray-200 hover:text-amber-400 transition-colors"
-        >
-          <span>Explore all {sections.find((s) => s.id === selectedSection)?.name} Stories</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
-      </div>
-
     </section>
   );
 };

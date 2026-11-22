@@ -48,32 +48,32 @@ export const CategoryPage = ({ categoryOverride }) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
       {/* Category Masthead Banner */}
-      <div className="pb-8 border-b border-zinc-800">
-        <div className="flex items-center space-x-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-2">
+      <div className="pb-8 border-b border-[#ded5c2]">
+        <div className="flex items-center space-x-2 text-xs font-mono text-[#946638] uppercase tracking-widest mb-2 font-bold">
           <span>Desk</span>
           <span>/</span>
           <span>{category.toUpperCase()}</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#1c1917]">
               {title}
             </h1>
-            <p className="text-gray-400 text-xs sm:text-sm mt-2 max-w-2xl">
-              Live updates, investigative coverage, and expert commentary curated from international bureaus.
+            <p className="text-xs text-[#574f45] mt-2 max-w-2xl leading-relaxed">
+              Verified investigative dispatches, deep analysis, and accredited global reporting curated by NEWS 24*7 foreign correspondents.
             </p>
           </div>
 
-          {/* Access Level Filter */}
-          <div className="flex items-center space-x-1.5 bg-zinc-900 p-1.5 rounded-xl border border-zinc-800 self-start md:self-auto">
+          {/* Access Level Filter Pills */}
+          <div className="flex items-center space-x-1.5 bg-[#ede5d6] p-1 rounded-xl border border-[#ded5c2] self-start md:self-auto">
             {['all', 'free', 'bronze', 'silver', 'gold'].map((tier) => (
               <button
                 key={tier}
                 onClick={() => setFilterTier(tier)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize transition-colors ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold uppercase transition-colors ${
                   filterTier === tier
-                    ? 'bg-amber-400 text-black shadow-sm font-bold'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'bg-[#946638] text-white shadow-sm'
+                    : 'text-[#574f45] hover:text-[#1c1917]'
                 }`}
               >
                 {tier}
@@ -83,65 +83,71 @@ export const CategoryPage = ({ categoryOverride }) => {
         </div>
       </div>
 
-      {/* Articles Grid */}
+      {/* Main Content Articles Grid */}
       {loading ? (
-        <div className="py-24 text-center text-gray-500">
-          <div className="inline-block w-8 h-8 border-2 border-amber-400 border-t-transparent rounded-full animate-spin mb-3" />
-          <p className="text-xs">Connecting to {category} bureau feed...</p>
+        <div className="py-24 text-center text-[#786f63]">
+          <div className="inline-block w-8 h-8 border-2 border-[#946638] border-t-transparent rounded-full animate-spin mb-3" />
+          <p className="text-xs font-mono">Curating {category} wire...</p>
         </div>
       ) : articles.length === 0 ? (
-        <div className="py-24 text-center text-gray-400">
-          <p className="font-serif text-xl">No stories currently found under this filter.</p>
-          <p className="text-xs text-gray-500 mt-2">Try clearing your filters or check back shortly.</p>
+        <div className="py-20 text-center bg-white rounded-3xl border border-[#ded5c2] my-8 shadow-sm">
+          <p className="font-serif text-xl font-bold text-[#1c1917]">No Dispatches Found</p>
+          <p className="text-xs text-[#786f63] mt-1">There are no stories under this filter at the moment.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           {articles.map((art) => (
             <div
               key={art.id}
-              className="glass-card glass-card-hover rounded-2xl p-5 border border-zinc-800/80 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-6 border border-[#ded5c2] hover:border-[#bda588] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="relative h-52 rounded-xl overflow-hidden mb-4">
+                <div className="relative rounded-2xl overflow-hidden h-52 mb-5 bg-[#ede5d6]">
                   <img
                     src={art.imageUrl}
                     alt={art.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 flex items-center space-x-1.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-black/80 text-amber-400 border border-amber-400/30">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/95 text-[#784f27] border border-[#d8ccb8] shadow-sm">
                       {art.category}
                     </span>
                     {art.accessLevel && art.accessLevel !== 'free' && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-black flex items-center space-x-1">
-                        <Lock className="w-3 h-3 text-black" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#946638] text-white flex items-center space-x-1 shadow-sm">
+                        <Lock className="w-3 h-3" />
                         <span>{art.accessLevel}</span>
                       </span>
                     )}
                   </div>
-
                   <button
                     onClick={() => toggleBookmark(art.id)}
-                    className="absolute top-3 right-3 p-2 rounded-full bg-zinc-900/80 hover:bg-zinc-800 text-gray-300 hover:text-amber-400 transition-colors"
+                    className="absolute top-3 right-3 p-2 rounded-full bg-white/90 hover:bg-white text-[#574f45] hover:text-[#946638] shadow-sm transition-colors"
                   >
-                    <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(art.id) ? 'fill-amber-400 text-amber-400' : ''}`} />
+                    <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(art.id) ? 'fill-[#946638] text-[#946638]' : ''}`} />
                   </button>
                 </div>
 
                 <Link to={`/article/${art.slug || art.id}`}>
-                  <h3 className="font-serif text-lg font-bold text-white group-hover:text-amber-400 transition-colors leading-snug mb-2">
+                  <h3 className="font-serif text-lg font-bold text-[#1c1917] group-hover:text-[#946638] transition-colors leading-snug line-clamp-2 mb-2">
                     {art.title}
                   </h3>
                 </Link>
 
-                <p className="text-xs text-gray-400 line-clamp-3 leading-relaxed mb-4">
+                <p className="text-xs text-[#574f45] line-clamp-3 leading-relaxed mb-4">
                   {art.summary}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-zinc-800/60 text-xs text-gray-500">
-                <span>By {art.author?.name || 'Staff'}</span>
-                <span className="text-amber-400/90 font-mono text-[11px]">{art.readTime || '5 min'}</span>
+              <div className="flex items-center justify-between text-xs text-[#786f63] pt-4 border-t border-[#ded5c2]">
+                <div className="flex items-center space-x-2">
+                  <span className="font-semibold text-[#1c1917]">{art.author?.name || 'Bureau'}</span>
+                  <span>•</span>
+                  <span>{new Date(art.publishedAt || art.createdAt).toLocaleDateString()}</span>
+                </div>
+                <div className="flex items-center space-x-1 text-[#946638] font-bold">
+                  <Clock className="w-3 h-3" />
+                  <span>{art.readTime || '5 min'}</span>
+                </div>
               </div>
             </div>
           ))}

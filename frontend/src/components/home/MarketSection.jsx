@@ -101,15 +101,15 @@ export const MarketSection = () => {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-zinc-800/80 gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#ded5c2] gap-4">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="text-[11px] font-bold text-[#946638] uppercase tracking-widest">
               Financial Intelligence
             </span>
           </div>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mt-1">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1c1917] mt-1">
             Global & Indian Stock Exchanges
           </h2>
         </div>
@@ -119,11 +119,11 @@ export const MarketSection = () => {
           {data.currencies?.map((curr) => (
             <div
               key={curr.symbol}
-              className="px-3 py-1.5 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs flex items-center space-x-2 shrink-0"
+              className="px-3 py-1.5 rounded-xl bg-white border border-[#ded5c2] text-xs flex items-center space-x-2 shrink-0 shadow-sm"
             >
-              <span className="font-semibold text-gray-300">{curr.symbol}</span>
-              <span className="text-white font-mono">{curr.rate}</span>
-              <span className={`text-[10px] font-mono ${curr.percent >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              <span className="font-bold text-[#1c1917]">{curr.symbol}</span>
+              <span className="text-[#574f45] font-mono">{curr.rate}</span>
+              <span className={`text-[10px] font-mono font-bold ${curr.percent >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
                 {curr.percent >= 0 ? `+${curr.percent}%` : `${curr.percent}%`}
               </span>
             </div>
@@ -131,7 +131,7 @@ export const MarketSection = () => {
 
           <Link
             to="/markets"
-            className="px-3 py-1.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 border border-amber-400/30 text-xs font-semibold flex items-center space-x-1 shrink-0 transition-colors"
+            className="px-3 py-1.5 rounded-xl bg-[#f2ece0] hover:bg-[#eae2d2] text-[#784f27] border border-[#d3c4b0] text-xs font-bold flex items-center space-x-1 shrink-0 transition-colors"
           >
             <span>Full Terminal</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -147,13 +147,13 @@ export const MarketSection = () => {
           
           {/* Market Tab Selector (Indian vs Global) */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
+            <div className="flex items-center space-x-2 bg-[#ede5d6] p-1 rounded-xl border border-[#ded5c2]">
               <button
                 onClick={() => { setSelectedMarketTab('indian'); setSelectedSymbolId('nifty50'); }}
                 className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                   selectedMarketTab === 'indian'
-                    ? 'bg-amber-400 text-black shadow-md'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'bg-[#946638] text-white shadow-sm'
+                    : 'text-[#574f45] hover:text-[#1c1917]'
                 }`}
               >
                 Indian Indices (NSE / BSE)
@@ -162,8 +162,8 @@ export const MarketSection = () => {
                 onClick={() => { setSelectedMarketTab('global'); setSelectedSymbolId('nasdaq'); }}
                 className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                   selectedMarketTab === 'global'
-                    ? 'bg-amber-400 text-black shadow-md'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'bg-[#946638] text-white shadow-sm'
+                    : 'text-[#574f45] hover:text-[#1c1917]'
                 }`}
               >
                 International (Wall St, Europe, Asia)
@@ -171,15 +171,15 @@ export const MarketSection = () => {
             </div>
 
             {/* Timeframe selector */}
-            <div className="flex items-center space-x-1 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
+            <div className="flex items-center space-x-1 bg-[#ede5d6] p-1 rounded-xl border border-[#ded5c2]">
               {['1D', '1W', '1M', '1Y'].map((tf) => (
                 <button
                   key={tf}
                   onClick={() => setActiveTimeframe(tf)}
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
+                  className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-colors ${
                     activeTimeframe === tf
-                      ? 'bg-zinc-800 text-amber-400'
-                      : 'text-gray-400 hover:text-white'
+                      ? 'bg-white text-[#1c1917] shadow-sm'
+                      : 'text-[#574f45] hover:text-[#1c1917]'
                   }`}
                 >
                   {tf}
@@ -199,27 +199,27 @@ export const MarketSection = () => {
                   onClick={() => setSelectedSymbolId(idx.id)}
                   className={`p-4 rounded-2xl border cursor-pointer transition-all duration-200 ${
                     isSelected
-                      ? 'bg-zinc-800/90 border-amber-400/80 shadow-lg'
-                      : 'bg-zinc-900/60 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800/50'
+                      ? 'bg-white border-[#946638] shadow-md ring-1 ring-[#946638]/20'
+                      : 'bg-white/80 border-[#ded5c2] hover:border-[#bda588] hover:bg-white'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-gray-300">{idx.name}</span>
+                    <span className="text-xs font-bold text-[#1c1917]">{idx.name}</span>
                     {isPositive ? (
-                      <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
                     ) : (
-                      <TrendingDown className="w-3.5 h-3.5 text-rose-400" />
+                      <TrendingDown className="w-3.5 h-3.5 text-rose-600" />
                     )}
                   </div>
                   <div className="mt-2">
-                    <span className="text-lg font-bold font-mono text-white">
+                    <span className="text-lg font-bold font-mono text-[#1c1917]">
                       {idx.current?.toLocaleString('en-IN')}
                     </span>
                     <div className="flex items-center space-x-1.5 mt-0.5 text-xs font-mono">
-                      <span className={isPositive ? 'text-emerald-400' : 'text-rose-400'}>
+                      <span className={isPositive ? 'text-emerald-700' : 'text-rose-700'}>
                         {isPositive ? `+${idx.change}` : idx.change}
                       </span>
-                      <span className={`text-[10px] ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
+                      <span className={`text-[10px] font-bold ${isPositive ? 'text-emerald-700' : 'text-rose-700'}`}>
                         ({isPositive ? `+${idx.percentChange}%` : `${idx.percentChange}%`})
                       </span>
                     </div>
@@ -230,24 +230,24 @@ export const MarketSection = () => {
           </div>
 
           {/* Interactive Recharts AreaChart Card */}
-          <div className="glass-card rounded-2xl p-5 border border-zinc-800/80">
+          <div className="glass-card rounded-2xl p-5 border border-[#ded5c2]">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h4 className="font-serif text-base font-bold text-white flex items-center space-x-2">
+                <h4 className="font-serif text-base font-bold text-[#1c1917] flex items-center space-x-2">
                   <span>{activeIndex?.name} Performance Curve</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-amber-400 font-mono">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#f2ece0] text-[#784f27] font-mono font-bold">
                     {activeTimeframe} Interval
                   </span>
                 </h4>
-                <p className="text-[11px] text-gray-400">
+                <p className="text-[11px] text-[#786f63]">
                   Real-time tick aggregation • Source: National Stock Exchange / Bloomberg Financial
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-xl font-bold font-mono text-white">
+                <span className="text-xl font-bold font-mono text-[#1c1917]">
                   {activeIndex?.current?.toLocaleString()}
                 </span>
-                <span className="text-xs text-emerald-400 font-mono block">
+                <span className="text-xs text-emerald-700 font-mono font-bold block">
                   +{activeIndex?.percentChange}% ({activeTimeframe})
                 </span>
               </div>
@@ -258,29 +258,30 @@ export const MarketSection = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <defs>
-                    <linearGradient id="goldMarketGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.0} />
+                    <linearGradient id="warmCamelMarketGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#946638" stopOpacity={0.35} />
+                      <stop offset="95%" stopColor="#946638" stopOpacity={0.0} />
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="time" stroke="#52525b" tick={{ fontSize: 11, fill: '#71717a' }} />
-                  <YAxis stroke="#52525b" domain={['dataMin - 50', 'dataMax + 50']} tick={{ fontSize: 11, fill: '#71717a' }} />
+                  <XAxis dataKey="time" stroke="#b5a996" tick={{ fontSize: 11, fill: '#786f63' }} />
+                  <YAxis stroke="#b5a996" domain={['dataMin - 50', 'dataMax + 50']} tick={{ fontSize: 11, fill: '#786f63' }} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: '#18181b',
-                      borderColor: '#3f3f46',
+                      backgroundColor: '#ffffff',
+                      borderColor: '#ded5c2',
                       borderRadius: '0.75rem',
-                      color: '#fff',
-                      fontSize: '12px'
+                      color: '#1c1917',
+                      fontSize: '12px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
                     }}
                   />
                   <Area
                     type="monotone"
                     dataKey="value"
-                    stroke="#f59e0b"
+                    stroke="#946638"
                     strokeWidth={2.5}
                     fillOpacity={1}
-                    fill="url(#goldMarketGradient)"
+                    fill="url(#warmCamelMarketGradient)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
@@ -293,28 +294,28 @@ export const MarketSection = () => {
         <div className="lg:col-span-4 space-y-6">
           
           {/* Top Gainers & Losers Box */}
-          <div className="glass-card rounded-2xl p-5 border border-zinc-800/80">
-            <h3 className="font-serif text-base font-bold text-white mb-3 flex items-center justify-between">
+          <div className="glass-card rounded-2xl p-5 border border-[#ded5c2]">
+            <h3 className="font-serif text-base font-bold text-[#1c1917] mb-3 flex items-center justify-between">
               <span>Market Movers</span>
-              <span className="text-[10px] text-amber-400 uppercase tracking-wider font-sans font-semibold">
+              <span className="text-[10px] text-[#946638] uppercase tracking-wider font-sans font-bold">
                 Dalal & Wall St
               </span>
             </h3>
 
             {/* Gainers */}
             <div className="space-y-2 mb-4">
-              <span className="text-[10px] font-bold tracking-wider text-emerald-400 uppercase block">
+              <span className="text-[10px] font-bold tracking-wider text-emerald-700 uppercase block">
                 Top Gainers
               </span>
               {data.topGainers?.slice(0, 3).map((stock) => (
-                <div key={stock.symbol} className="flex items-center justify-between p-2 rounded-xl bg-zinc-950/60 border border-zinc-800/80 text-xs">
+                <div key={stock.symbol} className="flex items-center justify-between p-2 rounded-xl bg-[#faf7f2] border border-[#ded5c2] text-xs">
                   <div>
-                    <span className="font-bold text-white">{stock.symbol}</span>
-                    <p className="text-[10px] text-gray-400 truncate max-w-[120px]">{stock.name}</p>
+                    <span className="font-bold text-[#1c1917]">{stock.symbol}</span>
+                    <p className="text-[10px] text-[#786f63] truncate max-w-[120px]">{stock.name}</p>
                   </div>
                   <div className="text-right font-mono">
-                    <span className="text-gray-200">₹{stock.price}</span>
-                    <span className="text-emerald-400 text-[10px] block font-bold">+{stock.percent}%</span>
+                    <span className="text-[#1c1917] font-semibold">₹{stock.price}</span>
+                    <span className="text-emerald-700 text-[10px] block font-bold">+{stock.percent}%</span>
                   </div>
                 </div>
               ))}
@@ -322,18 +323,18 @@ export const MarketSection = () => {
 
             {/* Losers */}
             <div className="space-y-2">
-              <span className="text-[10px] font-bold tracking-wider text-rose-400 uppercase block">
+              <span className="text-[10px] font-bold tracking-wider text-rose-700 uppercase block">
                 Top Decliners
               </span>
               {data.topLosers?.slice(0, 2).map((stock) => (
-                <div key={stock.symbol} className="flex items-center justify-between p-2 rounded-xl bg-zinc-950/60 border border-zinc-800/80 text-xs">
+                <div key={stock.symbol} className="flex items-center justify-between p-2 rounded-xl bg-[#faf7f2] border border-[#ded5c2] text-xs">
                   <div>
-                    <span className="font-bold text-white">{stock.symbol}</span>
-                    <p className="text-[10px] text-gray-400 truncate max-w-[120px]">{stock.name}</p>
+                    <span className="font-bold text-[#1c1917]">{stock.symbol}</span>
+                    <p className="text-[10px] text-[#786f63] truncate max-w-[120px]">{stock.name}</p>
                   </div>
                   <div className="text-right font-mono">
-                    <span className="text-gray-200">₹{stock.price}</span>
-                    <span className="text-rose-400 text-[10px] block font-bold">{stock.percent}%</span>
+                    <span className="text-[#1c1917] font-semibold">₹{stock.price}</span>
+                    <span className="text-rose-700 text-[10px] block font-bold">{stock.percent}%</span>
                   </div>
                 </div>
               ))}
@@ -342,19 +343,19 @@ export const MarketSection = () => {
           </div>
 
           {/* Financial Editorial Dispatch Callout */}
-          <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-400/10 via-zinc-900 to-zinc-950 border border-amber-400/30">
-            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block mb-1">
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-[#f5eee2] via-white to-[#ede3d2] border border-[#d9ccb6] shadow-sm">
+            <span className="text-[10px] font-bold text-[#946638] uppercase tracking-widest block mb-1">
               Morning Bell Briefing
             </span>
-            <h4 className="font-serif text-sm font-bold text-white leading-snug">
+            <h4 className="font-serif text-sm font-bold text-[#1c1917] leading-snug">
               Why central banks are quietly realigning balance sheets toward digital sovereign debt.
             </h4>
-            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+            <p className="text-xs text-[#574f45] mt-2 leading-relaxed">
               Subscribers receive our daily Wall Street & Dalal Street pre-market analysis at 08:00 IST.
             </p>
             <Link
               to="/markets"
-              className="mt-3 inline-flex items-center text-xs font-semibold text-amber-400 hover:text-amber-300"
+              className="mt-3 inline-flex items-center text-xs font-bold text-[#946638] hover:text-[#784f27]"
             >
               <span>Explore Market Intelligence Desk</span>
               <ArrowUpRight className="w-3.5 h-3.5 ml-1" />

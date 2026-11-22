@@ -29,41 +29,41 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full bg-[#0d0e12]/95 backdrop-blur-md border-b border-zinc-800/80 sticky top-0 z-40">
-      {/* Top Masthead Row matching reference design */}
+    <header className="w-full bg-white/95 backdrop-blur-md border-b border-[#e5ddcf] shadow-sm sticky top-0 z-40 transition-colors">
+      {/* Top Masthead Row */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[5.25rem] py-2.5 flex items-center justify-between">
         
         {/* Left Side: Hamburger & Date */}
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 text-gray-300 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-[#f4efe4] hover:bg-[#eae2d2] border border-[#ded5c2] text-[#423b32] hover:text-[#1c1917] transition-colors"
             title="Toggle Navigation Menu"
             aria-label="Navigation Menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           <div className="hidden md:flex flex-col">
-            <span className="text-xs font-medium text-gray-400 tracking-wide">
+            <span className="text-xs font-medium text-[#5c554b] tracking-wide">
               {currentDate || 'Sunday, November 22, 2026'}
             </span>
-            <span className="text-[10px] text-amber-500/90 font-semibold tracking-wider uppercase">
+            <span className="text-[10px] text-[#946638] font-semibold tracking-wider uppercase">
               Global Edition • Vol. 148 No. 24
             </span>
           </div>
         </div>
 
-        {/* Center: Classic Blackletter / Serif Newspaper Masthead */}
+        {/* Center: Classic Newspaper Masthead in Deep Charcoal Ink & Warm Camel Beige */}
         <div className="flex flex-col items-center justify-center cursor-pointer py-1" onClick={() => navigate('/')}>
-          <h1 className="font-serif tracking-tight text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none selection:bg-amber-400 selection:text-black">
-            NEWS <span className="text-amber-400 italic font-serif">24</span><span className="text-amber-500">*</span><span className="text-white">7</span>
+          <h1 className="font-serif tracking-tight text-2xl sm:text-3xl md:text-4xl font-black text-[#1c1917] leading-none selection:bg-[#e8decd] selection:text-[#1c1917]">
+            NEWS <span className="text-[#946638] italic font-serif">24</span><span className="text-[#b8895b]">*</span><span className="text-[#1c1917]">7</span>
           </h1>
-          <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-gray-400 font-sans hidden sm:block mt-1.5 font-medium">
+          <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-[#786f63] font-sans hidden sm:block mt-1.5 font-semibold">
             The Chronicle of Global & Financial Affairs
           </span>
         </div>
 
-        {/* Right Side: Search, Subscribe Pill & User Profile */}
+        {/* Right Side: Search, Warm Beige Subscribe Pill & User Profile */}
         <div className="flex items-center space-x-3">
           {/* Quick Search Bar */}
           <form onSubmit={handleSearchSubmit} className="hidden lg:flex items-center relative">
@@ -72,17 +72,17 @@ export const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search news, topics, tickers..."
-              className="w-48 xl:w-56 bg-zinc-900/90 border border-zinc-800 focus:border-amber-400 text-xs text-gray-200 placeholder-gray-500 rounded-full pl-9 pr-3 py-2 outline-none transition-all duration-200"
+              className="w-48 xl:w-56 bg-[#f4efe4] border border-[#ded5c2] focus:border-[#946638] focus:bg-white text-xs text-[#1c1917] placeholder-[#8c8273] rounded-full pl-9 pr-3 py-2 outline-none transition-all duration-200"
             />
-            <Search className="w-3.5 h-3.5 text-gray-400 absolute left-3 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-[#786f63] absolute left-3 pointer-events-none" />
           </form>
 
-          {/* Yellow Pill Subscribe Button matching reference */}
+          {/* Warm Beige / Camel Pill Subscribe Button */}
           <Link
             to="/subscriptions"
-            className="px-4 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-black font-semibold text-xs transition-transform duration-200 hover:scale-105 shadow-md flex items-center space-x-1"
+            className="px-4 py-2 rounded-full bg-[#946638] hover:bg-[#7e552d] text-white font-semibold text-xs transition-transform duration-200 hover:scale-105 shadow-sm flex items-center space-x-1"
           >
-            <Sparkles className="w-3.5 h-3.5 text-black" />
+            <Sparkles className="w-3.5 h-3.5 text-[#f4efe4]" />
             <span>Subscribe now</span>
           </Link>
 
@@ -91,33 +91,33 @@ export const Header = () => {
             <div className="relative">
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="flex items-center space-x-2 p-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-amber-400/50 transition-colors"
+                className="flex items-center space-x-2 p-1.5 rounded-full bg-[#f4efe4] border border-[#ded5c2] hover:border-[#946638]/50 transition-colors"
               >
                 <img
                   src={user.avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${user.name}`}
                   alt={user.name}
                   className="w-7 h-7 rounded-full object-cover"
                 />
-                <span className="text-xs font-medium text-gray-200 hidden xl:inline max-w-[90px] truncate">
+                <span className="text-xs font-semibold text-[#1c1917] hidden xl:inline max-w-[90px] truncate">
                   {user.name}
                 </span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-[#786f63]" />
               </button>
 
               {/* User Dropdown */}
               {userMenuOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-64 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-2xl shadow-2xl py-2 z-50 animate-fade-in"
+                  className="absolute right-0 mt-2 w-64 bg-white border border-[#ded5c2] rounded-2xl shadow-xl py-2 z-50 animate-fade-in"
                   onClick={() => setUserMenuOpen(false)}
                 >
-                  <div className="px-4 py-3 border-b border-zinc-800">
-                    <p className="text-xs text-gray-400">Signed in as</p>
-                    <p className="text-sm font-semibold text-white truncate">{user.name}</p>
+                  <div className="px-4 py-3 border-b border-[#ded5c2] bg-[#fbf9f4]">
+                    <p className="text-xs text-[#786f63]">Signed in as</p>
+                    <p className="text-sm font-semibold text-[#1c1917] truncate">{user.name}</p>
                     <div className="flex items-center space-x-2 mt-1">
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-400 font-medium">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ebdccb] text-[#784f27] font-semibold">
                         {user.role}
                       </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-medium">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-semibold border border-emerald-200">
                         {user.tier} Tier
                       </span>
                     </div>
@@ -126,35 +126,35 @@ export const Header = () => {
                   <div className="py-1">
                     <Link
                       to="/dashboard"
-                      className="flex items-center px-4 py-2 text-xs text-gray-300 hover:bg-zinc-800 hover:text-white"
+                      className="flex items-center px-4 py-2 text-xs text-[#423b32] hover:bg-[#f4efe4] hover:text-[#1c1917]"
                     >
-                      <User className="w-4 h-4 mr-2.5 text-gray-400" />
+                      <User className="w-4 h-4 mr-2.5 text-[#786f63]" />
                       Reader Dashboard
                     </Link>
                     <Link
                       to="/saved"
-                      className="flex items-center px-4 py-2 text-xs text-gray-300 hover:bg-zinc-800 hover:text-white"
+                      className="flex items-center px-4 py-2 text-xs text-[#423b32] hover:bg-[#f4efe4] hover:text-[#1c1917]"
                     >
-                      <Bookmark className="w-4 h-4 mr-2.5 text-gray-400" />
+                      <Bookmark className="w-4 h-4 mr-2.5 text-[#786f63]" />
                       Saved Stories ({user.bookmarks?.length || 0})
                     </Link>
                     {isEditorialStaff && (
                       <Link
                         to="/admin"
-                        className="flex items-center px-4 py-2 text-xs text-amber-400 hover:bg-zinc-800 font-semibold"
+                        className="flex items-center px-4 py-2 text-xs text-[#946638] hover:bg-[#f4efe4] font-semibold"
                       >
-                        <Shield className="w-4 h-4 mr-2.5 text-amber-400" />
+                        <Shield className="w-4 h-4 mr-2.5 text-[#946638]" />
                         Admin & Editorial Panel
                       </Link>
                     )}
                   </div>
 
-                  <div className="border-t border-zinc-800 pt-1">
+                  <div className="border-t border-[#ded5c2] pt-1">
                     <button
                       onClick={logout}
-                      className="w-full flex items-center px-4 py-2 text-xs text-red-400 hover:bg-zinc-800 text-left"
+                      className="w-full flex items-center px-4 py-2 text-xs text-red-600 hover:bg-red-50 text-left font-medium"
                     >
-                      <LogOut className="w-4 h-4 mr-2.5 text-red-400" />
+                      <LogOut className="w-4 h-4 mr-2.5 text-red-600" />
                       Sign Out
                     </button>
                   </div>
@@ -164,7 +164,7 @@ export const Header = () => {
           ) : (
             <Link
               to="/login"
-              className="px-3.5 py-1.5 rounded-full border border-zinc-700 hover:border-gray-500 text-xs text-gray-300 hover:text-white transition-colors"
+              className="px-3.5 py-1.5 rounded-full border border-[#ded5c2] bg-[#f4efe4] hover:bg-[#eae2d2] hover:border-[#bda88e] text-xs font-medium text-[#423b32] hover:text-[#1c1917] transition-colors"
             >
               Sign In
             </Link>
@@ -174,41 +174,41 @@ export const Header = () => {
 
       {/* Slide-out / Mobile Navigation Drawer */}
       {menuOpen && (
-        <div className="bg-zinc-950/95 backdrop-blur-xl border-b border-zinc-800 px-6 py-6 transition-all duration-300">
+        <div className="bg-[#fbf9f5] border-b border-[#ded5c2] px-6 py-6 transition-all duration-300 shadow-lg">
           <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div>
-              <h4 className="text-[11px] font-semibold tracking-wider text-amber-400 uppercase mb-3">Main Desks</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link to="/world" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">World Affairs</Link></li>
-                <li><Link to="/india" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">India National</Link></li>
-                <li><Link to="/politics" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Politics & Governance</Link></li>
-                <li><Link to="/markets" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Financial Markets</Link></li>
+              <h4 className="text-[11px] font-bold tracking-wider text-[#946638] uppercase mb-3">Main Desks</h4>
+              <ul className="space-y-2 text-sm text-[#423b32]">
+                <li><Link to="/world" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">World Affairs</Link></li>
+                <li><Link to="/india" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">India National</Link></li>
+                <li><Link to="/politics" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Politics & Governance</Link></li>
+                <li><Link to="/markets" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Financial Markets</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[11px] font-semibold tracking-wider text-amber-400 uppercase mb-3">Intelligence</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link to="/business" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Business & Enterprise</Link></li>
-                <li><Link to="/technology" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Technology & AI</Link></li>
-                <li><Link to="/science" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Science & Space</Link></li>
-                <li><Link to="/opinion" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Editorial Columns</Link></li>
+              <h4 className="text-[11px] font-bold tracking-wider text-[#946638] uppercase mb-3">Intelligence</h4>
+              <ul className="space-y-2 text-sm text-[#423b32]">
+                <li><Link to="/business" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Business & Enterprise</Link></li>
+                <li><Link to="/technology" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Technology & AI</Link></li>
+                <li><Link to="/science" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Science & Space</Link></li>
+                <li><Link to="/opinion" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Editorial Columns</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[11px] font-semibold tracking-wider text-amber-400 uppercase mb-3">Culture & Life</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link to="/sports" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Sports & Athletics</Link></li>
-                <li><Link to="/entertainment" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Entertainment & Arts</Link></li>
-                <li><Link to="/subscriptions" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Membership Tiers</Link></li>
+              <h4 className="text-[11px] font-bold tracking-wider text-[#946638] uppercase mb-3">Culture & Life</h4>
+              <ul className="space-y-2 text-sm text-[#423b32]">
+                <li><Link to="/sports" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Sports & Athletics</Link></li>
+                <li><Link to="/entertainment" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Entertainment & Arts</Link></li>
+                <li><Link to="/subscriptions" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Membership Tiers</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[11px] font-semibold tracking-wider text-amber-400 uppercase mb-3">Institutional</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">About NEWS 24*7</Link></li>
-                <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-amber-400">Global Bureaus & Contact</Link></li>
+              <h4 className="text-[11px] font-bold tracking-wider text-[#946638] uppercase mb-3">Institutional</h4>
+              <ul className="space-y-2 text-sm text-[#423b32]">
+                <li><Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">About NEWS 24*7</Link></li>
+                <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-[#946638]">Global Bureaus & Contact</Link></li>
                 {isEditorialStaff && (
-                  <li><Link to="/admin" onClick={() => setMenuOpen(false)} className="text-amber-400 font-semibold">Admin Panel</Link></li>
+                  <li><Link to="/admin" onClick={() => setMenuOpen(false)} className="text-[#946638] font-bold">Admin Panel</Link></li>
                 )}
               </ul>
             </div>

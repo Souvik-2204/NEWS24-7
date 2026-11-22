@@ -30,9 +30,9 @@ export function App() {
     <Router>
       <AuthProvider>
         <NewsProvider>
-          <div className="min-h-screen bg-[#0b0c10] text-gray-100 flex flex-col selection:bg-amber-400 selection:text-black">
+          <div className="min-h-screen bg-[#f8f6f0] text-[#1c1917] flex flex-col selection:bg-[#e8decd] selection:text-[#1c1917]">
             
-            {/* Masthead Header matching Dribbble Reference */}
+            {/* Masthead Header matching White & Warm Beige Editorial Theme */}
             <Header />
 
             {/* Category Pills Navigation */}
@@ -55,24 +55,40 @@ export function App() {
                 <Route path="/entertainment" element={<CategoryPage categoryOverride="entertainment" />} />
                 <Route path="/science" element={<CategoryPage categoryOverride="science" />} />
                 <Route path="/opinion" element={<CategoryPage categoryOverride="opinion" />} />
+                
+                {/* Dynamic Category Slug Route */}
                 <Route path="/category/:categorySlug" element={<CategoryPage />} />
+                
+                {/* Article Read Page */}
                 <Route path="/article/:id" element={<ArticleDetailsPage />} />
+                
+                {/* Search */}
                 <Route path="/search" element={<SearchPage />} />
+
+                {/* Subscriptions */}
                 <Route path="/subscriptions" element={<SubscriptionPlansPage />} />
+
+                {/* User Portal */}
                 <Route path="/dashboard" element={<UserDashboardPage />} />
                 <Route path="/saved" element={<SavedArticlesPage />} />
+
+                {/* Authentication */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+
+                {/* Admin CMS Portal */}
                 <Route path="/admin" element={<AdminDashboardPage />} />
+
+                {/* Institutional Pages */}
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </main>
 
-            {/* Global Editorial Footer */}
+            {/* Global Footer */}
             <Footer />
 
-            {/* Instant Demo Role Switcher (Super Admin, Chief Editor, Section Editor, Author, Subscriber, Reader) */}
+            {/* Floating Instant Demo Role Switcher */}
             <DemoRoleSwitcher />
 
           </div>

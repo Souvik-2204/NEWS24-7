@@ -1,5 +1,25 @@
 [
   {
+    "id": "log_1795353304806_k4dyb",
+    "timestamp": "2026-11-22T13:15:04.806Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 3
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795352405323_dg8sj",
+    "timestamp": "2026-11-22T13:00:05.323Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 2
+    },
+    "userId": null,
+    "role": null
+  },
+  {
     "id": "log_1795351505879_13hgo",
     "timestamp": "2026-11-22T12:45:05.879Z",
     "action": "LIVE_NEWS_SYNC",

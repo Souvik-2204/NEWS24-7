@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#0b0c10] text-gray-100 font-sans antialiased overflow-x-hidden;
+    @apply bg-[#f8f6f0] text-[#1c1917] font-sans antialiased overflow-x-hidden;
   }
 }
 
@@ -14,32 +14,33 @@
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0c10;
+  background: #f2ece2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #252834;
+  background: #d4cbbd;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #946638;
 }
 
-/* Editorial Glass card effect matching reference */
+/* Editorial Glass card effect matching white-beige newspaper theme */
 .glass-card {
-  background: rgba(22, 24, 32, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(229, 221, 207, 0.95);
+  box-shadow: 0 4px 20px -3px rgba(110, 95, 75, 0.05);
 }
 
 .glass-card-hover {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-card-hover:hover {
-  background: rgba(26, 29, 39, 0.88);
-  border-color: rgba(245, 158, 11, 0.3);
+  background: #ffffff;
+  border-color: rgba(148, 102, 56, 0.45);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 28px -6px rgba(110, 95, 75, 0.12);
 }
 
 /* Editorial Drop-cap styling for articles */
@@ -51,11 +52,11 @@
   padding-top: 4px;
   padding-right: 12px;
   padding-bottom: 4px;
-  color: #f59e0b;
+  color: #946638;
   font-weight: 700;
 }
 
-/* Subtle glow */
-.amber-glow {
-  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.35);
+/* Subtle warm glow */
+.amber-glow, .beige-glow {
+  box-shadow: 0 0 25px -5px rgba(148, 102, 56, 0.25);
 }

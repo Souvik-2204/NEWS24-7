@@ -29,29 +29,29 @@ export const RegisterPage = () => {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-3xl p-8 shadow-2xl space-y-6">
+      <div className="w-full max-w-md bg-white border border-[#ded5c2] rounded-3xl p-8 shadow-xl space-y-6 text-[#1c1917]">
         
         <div className="text-center space-y-2">
           <Link to="/" className="inline-block">
-            <h2 className="font-serif text-3xl font-black text-white">
-              NEWS <span className="text-amber-400 italic">24</span><span className="text-amber-500">*</span>7
+            <h2 className="font-serif text-3xl font-black text-[#1c1917]">
+              NEWS <span className="text-[#946638] italic">24</span><span className="text-[#b8895b]">*</span>7
             </h2>
           </Link>
-          <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">
+          <p className="text-xs text-[#786f63] uppercase tracking-widest font-mono font-bold">
             Create Reader Membership
           </p>
         </div>
 
         {error && (
-          <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center space-x-2">
-            <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />
+          <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs flex items-center space-x-2">
+            <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
             <span>{error}</span>
           </div>
         )}
 
         <form onSubmit={handleRegister} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-bold text-[#1c1917] uppercase tracking-wider mb-1.5">
               Full Legal Name
             </label>
             <div className="relative">
@@ -61,14 +61,14 @@ export const RegisterPage = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Lord Byron"
-                className="w-full bg-zinc-950 border border-zinc-700 focus:border-amber-400 text-xs text-white rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
+                className="w-full bg-[#faf7f2] border border-[#ded5c2] focus:border-[#946638] text-xs text-[#1c1917] rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
               />
-              <User className="w-4 h-4 text-gray-500 absolute left-3.5 top-3.5" />
+              <User className="w-4 h-4 text-[#786f63] absolute left-3.5 top-3.5" />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-bold text-[#1c1917] uppercase tracking-wider mb-1.5">
               Email Address
             </label>
             <div className="relative">
@@ -78,14 +78,14 @@ export const RegisterPage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@news247.global"
-                className="w-full bg-zinc-950 border border-zinc-700 focus:border-amber-400 text-xs text-white rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
+                className="w-full bg-[#faf7f2] border border-[#ded5c2] focus:border-[#946638] text-xs text-[#1c1917] rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
               />
-              <Mail className="w-4 h-4 text-gray-500 absolute left-3.5 top-3.5" />
+              <Mail className="w-4 h-4 text-[#786f63] absolute left-3.5 top-3.5" />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-bold text-[#1c1917] uppercase tracking-wider mb-1.5">
               Password
             </label>
             <div className="relative">
@@ -95,39 +95,42 @@ export const RegisterPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-zinc-950 border border-zinc-700 focus:border-amber-400 text-xs text-white rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
+                className="w-full bg-[#faf7f2] border border-[#ded5c2] focus:border-[#946638] text-xs text-[#1c1917] rounded-xl pl-10 pr-4 py-3 outline-none transition-colors"
               />
-              <Lock className="w-4 h-4 text-gray-500 absolute left-3.5 top-3.5" />
+              <Lock className="w-4 h-4 text-[#786f63] absolute left-3.5 top-3.5" />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
-              Initial Membership Type
+            <label className="block text-xs font-bold text-[#1c1917] uppercase tracking-wider mb-1.5">
+              Account Accreditation Type
             </label>
             <select
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-700 focus:border-amber-400 text-xs text-white rounded-xl px-4 py-3 outline-none"
+              className="w-full bg-[#faf7f2] border border-[#ded5c2] focus:border-[#946638] text-xs text-[#1c1917] rounded-xl px-4 py-3 outline-none"
             >
-              <option value="Free Reader">Free Reader (Standard Access)</option>
-              <option value="Subscriber">Subscriber (Bronze Demo Access)</option>
+              <option value="Free Reader">Free Reader (Standard Dispatches)</option>
+              <option value="Subscriber">Subscriber (Full Access Tier)</option>
+              <option value="Author/Journalist">Author / Journalist (Drafting Privileges)</option>
+              <option value="Section Editor">Section Editor (Editorial Review)</option>
+              <option value="Chief Editor">Chief Editor (Final Publishing Approval)</option>
             </select>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.01] shadow-lg disabled:opacity-50"
+            className="w-full py-3 rounded-full bg-[#946638] hover:bg-[#7e552d] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.01] shadow-md disabled:opacity-50"
           >
-            {loading ? 'Creating Account...' : 'Complete Registration'}
+            {loading ? 'Creating Credentials...' : 'Register Account'}
           </button>
         </form>
 
-        <p className="text-center text-xs text-gray-500">
+        <p className="text-center text-xs text-[#786f63]">
           Already have an account?{' '}
-          <Link to="/login" className="text-amber-400 hover:underline font-semibold">
-            Sign In
+          <Link to="/login" className="text-[#946638] hover:underline font-bold">
+            Sign In Here
           </Link>
         </p>
 

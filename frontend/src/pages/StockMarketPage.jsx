@@ -58,169 +58,157 @@ export const StockMarketPage = () => {
         percentChange: 0.77,
         high: 54380.00,
         low: 53820.50,
-        volume: '1.25B'
+        volume: '2.14B'
       }
-    ],
-    indianStocks: [
-      { symbol: 'RELIANCE', name: 'Reliance Industries', price: 3045.20, change: 24.80, percent: 0.82, pe: 26.4 },
-      { symbol: 'TCS', name: 'Tata Consultancy Services', price: 4280.50, change: 58.10, percent: 1.38, pe: 31.2 },
-      { symbol: 'HDFCBANK', name: 'HDFC Bank Ltd', price: 1785.40, change: 18.25, percent: 1.03, pe: 19.8 },
-      { symbol: 'INFY', name: 'Infosys Ltd', price: 1920.10, change: -12.40, percent: -0.64, pe: 28.5 },
-      { symbol: 'ICICIBANK', name: 'ICICI Bank Ltd', price: 1310.75, change: 14.50, percent: 1.12, pe: 18.2 }
     ],
     globalIndices: [
       {
         id: 'nasdaq',
         symbol: '^IXIC',
         name: 'NASDAQ Composite',
-        region: 'USA',
         current: 19845.20,
         change: 195.40,
         percentChange: 0.99,
         high: 19910.00,
-        low: 19680.50
+        low: 19720.10,
+        volume: '5.12B'
       },
       {
         id: 'sp500',
         symbol: '^GSPC',
         name: 'S&P 500',
-        region: 'USA',
         current: 5980.60,
         change: 38.20,
         percentChange: 0.64,
         high: 5995.00,
-        low: 5945.10
+        low: 5950.00,
+        volume: '4.20B'
       },
       {
         id: 'dowjones',
         symbol: '^DJI',
-        name: 'DOW JONES',
-        region: 'USA',
+        name: 'DOW JONES Industrial',
         current: 43810.15,
         change: 145.80,
         percentChange: 0.33,
-        high: 43920.00,
-        low: 43680.00
-      },
-      { id: 'ftse100', symbol: '^FTSE', name: 'FTSE 100', region: 'UK', current: 8415.50, change: 32.10, percentChange: 0.38 },
-      { id: 'dax', symbol: '^GDAXI', name: 'DAX 40', region: 'Germany', current: 19480.90, change: 112.40, percentChange: 0.58 },
-      { id: 'nikkei225', symbol: '^N225', name: 'NIKKEI 225', region: 'Japan', current: 39120.40, change: 240.60, percentChange: 0.62 }
-    ],
-    currencies: [
-      { symbol: 'USD/INR', rate: 86.82, percent: -0.16 },
-      { symbol: 'EUR/INR', rate: 91.45, percent: +0.31 },
-      { symbol: 'GBP/INR', rate: 109.12, percent: +0.41 }
+        high: 43900.00,
+        low: 43680.00,
+        volume: '3.40B'
+      }
     ],
     topGainers: [
       { symbol: 'TATASTEEL', name: 'Tata Steel', price: 168.40, percent: 5.12 },
       { symbol: 'NVDA', name: 'NVIDIA Corp', price: 142.80, percent: 4.73 },
       { symbol: 'BHARTIARTL', name: 'Bharti Airtel', price: 1620.00, percent: 3.95 },
-      { symbol: 'MSFT', name: 'Microsoft Corp', price: 448.20, percent: 2.94 }
+      { symbol: 'RELIANCE', name: 'Reliance Industries', price: 2980.50, percent: 2.84 }
     ],
     topLosers: [
       { symbol: 'TITAN', name: 'Titan Company', price: 3280.00, percent: -2.15 },
       { symbol: 'TSLA', name: 'Tesla Inc', price: 284.10, percent: -2.03 },
-      { symbol: 'BAJFINANCE', name: 'Bajaj Finance', price: 6890.00, percent: -1.57 }
+      { symbol: 'INFY', name: 'Infosys Ltd', price: 1840.00, percent: -1.72 }
     ]
   };
 
   const data = markets || defaultMarkets;
   const allIndices = [...(data.indianIndices || []), ...(data.globalIndices || [])];
-  const activeIndex = allIndices.find((idx) => idx.id === activeIndexId) || data.indianIndices?.[0];
+  const activeIndex = allIndices.find((i) => i.id === activeIndexId) || allIndices[0];
 
-  const chartSeries = activeIndex?.history?.[selectedTimeframe] || [
+  const chartData = activeIndex?.history?.[selectedTimeframe] || [
     { time: '09:15', value: 25720 },
-    { time: '11:00', value: 25780 },
-    { time: '13:00', value: 25830 },
-    { time: '15:30', value: 25890 }
+    { time: '11:45', value: 25810 },
+    { time: '13:00', value: 25790 },
+    { time: '15:30', value: 25890.45 }
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       
-      {/* Financial Terminal Header */}
-      <div className="pb-8 border-b border-zinc-800 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      {/* Terminal Header */}
+      <div className="pb-6 border-b border-[#ded5c2] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center space-x-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-1.5">
-            <Activity className="w-4 h-4 text-amber-400" />
-            <span>Dalal & Wall Street Intelligence Terminal</span>
+          <div className="flex items-center space-x-2 text-xs font-mono text-[#946638] uppercase tracking-widest mb-1.5 font-bold">
+            <Activity className="w-4 h-4 text-[#946638]" />
+            <span>Financial Intelligence Terminal</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Real-Time Financial Markets
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#1c1917]">
+            Global Market Exchanges & Currencies
           </h1>
-          <p className="text-gray-400 text-xs sm:text-sm mt-2 max-w-2xl">
-            Live tick aggregation, multi-timeframe analytics, index trends, and corporate valuation metrics.
+          <p className="text-xs text-[#574f45] mt-1">
+            Real-time index movements, tick volumes, and institutional financial telemetry.
           </p>
         </div>
 
-        {/* Currency Rates Box */}
-        <div className="flex items-center space-x-3 bg-zinc-900/90 border border-zinc-800 p-3 rounded-2xl">
-          {data.currencies?.map((c) => (
-            <div key={c.symbol} className="text-xs px-2 border-r last:border-r-0 border-zinc-800">
-              <span className="text-gray-400 block font-semibold">{c.symbol}</span>
-              <span className="text-white font-mono font-bold">{c.rate}</span>
-              <span className={`text-[10px] block font-mono ${c.percent >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                {c.percent >= 0 ? `+${c.percent}%` : `${c.percent}%`}
-              </span>
-            </div>
-          ))}
+        {/* Live status badge */}
+        <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span>DALAL STREET & WALL STREET: ACTIVE</span>
+          </div>
         </div>
       </div>
 
-      {/* Main Terminal Grid */}
+      {/* Main Terminal Overview Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        {/* Left Col: Primary Index Chart & Detail (Col 8) */}
+        {/* Left Column: Big Interactive Chart & Indices Selection */}
         <div className="lg:col-span-8 space-y-6">
           
-          {/* Index Selector Tabs */}
-          <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-1">
-            {allIndices.map((idx) => {
-              const isSelected = activeIndex?.id === idx.id;
+          {/* Index Selector Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {allIndices.slice(0, 6).map((idx) => {
+              const isSelected = idx.id === activeIndexId;
+              const isPositive = idx.change >= 0;
               return (
-                <button
+                <div
                   key={idx.id}
                   onClick={() => setActiveIndexId(idx.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all border ${
+                  className={`p-4 rounded-2xl border cursor-pointer transition-all ${
                     isSelected
-                      ? 'bg-amber-400 text-black border-amber-400 shadow-md'
-                      : 'bg-zinc-900/80 text-gray-400 border-zinc-800 hover:text-white'
+                      ? 'bg-white border-[#946638] shadow-md ring-1 ring-[#946638]'
+                      : 'bg-white border-[#ded5c2] hover:border-[#bda588]'
                   }`}
                 >
-                  {idx.name}
-                </button>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#1c1917]">{idx.name}</span>
+                    {isPositive ? (
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                    ) : (
+                      <TrendingDown className="w-3.5 h-3.5 text-rose-600" />
+                    )}
+                  </div>
+                  <p className="text-lg font-bold font-mono text-[#1c1917] mt-1">
+                    {idx.current?.toLocaleString()}
+                  </p>
+                  <span className={`text-[11px] font-mono font-bold ${isPositive ? 'text-emerald-700' : 'text-rose-700'}`}>
+                    {isPositive ? `+${idx.percentChange}%` : `${idx.percentChange}%`}
+                  </span>
+                </div>
               );
             })}
           </div>
 
-          {/* Large Interactive Chart Card */}
-          <div className="glass-card rounded-3xl p-6 border border-zinc-800 shadow-2xl">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+          {/* Interactive Chart Container */}
+          <div className="bg-white rounded-3xl p-6 border border-[#ded5c2] shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-[#ded5c2] gap-2">
               <div>
-                <div className="flex items-center space-x-2">
-                  <h2 className="font-serif text-2xl font-bold text-white">{activeIndex?.name}</h2>
-                  <span className="text-xs font-mono text-gray-400">({activeIndex?.symbol})</span>
-                </div>
-                <div className="flex items-baseline space-x-3 mt-1">
-                  <span className="text-3xl font-bold font-mono text-white">
-                    {activeIndex?.current?.toLocaleString()}
-                  </span>
-                  <span className={`text-sm font-mono font-bold ${activeIndex?.change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                    {activeIndex?.change >= 0 ? `+${activeIndex?.change}` : activeIndex?.change} ({activeIndex?.percentChange}%)
-                  </span>
-                </div>
+                <h3 className="font-serif text-xl font-bold text-[#1c1917]">
+                  {activeIndex?.name} ({activeIndex?.symbol})
+                </h3>
+                <span className="text-xs text-[#786f63] font-mono">
+                  Volume: {activeIndex?.volume || '3.5B'} • High: {activeIndex?.high || 25900} • Low: {activeIndex?.low || 25700}
+                </span>
               </div>
 
-              {/* Timeframe Buttons */}
-              <div className="flex items-center space-x-1.5 bg-zinc-900 p-1.5 rounded-xl border border-zinc-800 self-start sm:self-auto">
+              {/* Timeframe selector */}
+              <div className="flex items-center space-x-1 bg-[#ede5d6] p-1 rounded-xl border border-[#ded5c2]">
                 {['1D', '1W', '1M', '1Y'].map((tf) => (
                   <button
                     key={tf}
                     onClick={() => setSelectedTimeframe(tf)}
                     className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors ${
                       selectedTimeframe === tf
-                        ? 'bg-zinc-800 text-amber-400'
-                        : 'text-gray-400 hover:text-white'
+                        ? 'bg-white text-[#1c1917] shadow-sm'
+                        : 'text-[#574f45] hover:text-[#1c1917]'
                     }`}
                   >
                     {tf}
@@ -229,158 +217,102 @@ export const StockMarketPage = () => {
               </div>
             </div>
 
-            {/* Recharts Area Chart */}
-            <div className="h-80 w-full mt-6">
+            <div className="h-80 w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={chartSeries} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+                <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                   <defs>
-                    <linearGradient id="terminalGoldGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.45} />
-                      <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.0} />
+                    <linearGradient id="warmCamelMarketGradient2" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#946638" stopOpacity={0.35} />
+                      <stop offset="95%" stopColor="#946638" stopOpacity={0.0} />
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="time" stroke="#52525b" tick={{ fontSize: 11, fill: '#71717a' }} />
-                  <YAxis stroke="#52525b" domain={['dataMin - 40', 'dataMax + 40']} tick={{ fontSize: 11, fill: '#71717a' }} />
+                  <XAxis dataKey="time" stroke="#b5a996" tick={{ fontSize: 11, fill: '#786f63' }} />
+                  <YAxis stroke="#b5a996" domain={['dataMin - 50', 'dataMax + 50']} tick={{ fontSize: 11, fill: '#786f63' }} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: '#18181b',
-                      borderColor: '#3f3f46',
+                      backgroundColor: '#ffffff',
+                      borderColor: '#ded5c2',
                       borderRadius: '0.75rem',
-                      color: '#fff',
-                      fontSize: '12px'
+                      color: '#1c1917',
+                      fontSize: '12px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
                     }}
                   />
                   <Area
                     type="monotone"
                     dataKey="value"
-                    stroke="#f59e0b"
-                    strokeWidth={3}
+                    stroke="#946638"
+                    strokeWidth={2.5}
                     fillOpacity={1}
-                    fill="url(#terminalGoldGradient)"
+                    fill="url(#warmCamelMarketGradient2)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
-            </div>
-
-            {/* Key Technical Stats Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-zinc-800/80 text-xs font-mono">
-              <div>
-                <span className="text-gray-500 block">Day High</span>
-                <span className="text-white font-bold text-sm">{activeIndex?.high?.toLocaleString() || '25,940'}</span>
-              </div>
-              <div>
-                <span className="text-gray-500 block">Day Low</span>
-                <span className="text-white font-bold text-sm">{activeIndex?.low?.toLocaleString() || '25,710'}</span>
-              </div>
-              <div>
-                <span className="text-gray-500 block">Volume</span>
-                <span className="text-white font-bold text-sm">{activeIndex?.volume || '3.84B'}</span>
-              </div>
-              <div>
-                <span className="text-gray-500 block">Status</span>
-                <span className="text-emerald-400 font-bold text-sm flex items-center space-x-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>Active Live</span>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Indian Bluechip Equities Table */}
-          <div className="glass-card rounded-3xl p-6 border border-zinc-800">
-            <h3 className="font-serif text-lg font-bold text-white mb-4">
-              Major Indian Equities (NSE Bluechips)
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs font-mono">
-                <thead>
-                  <tr className="border-b border-zinc-800 text-gray-400">
-                    <th className="pb-3">Symbol</th>
-                    <th className="pb-3">Company</th>
-                    <th className="pb-3 text-right">LTP (₹)</th>
-                    <th className="pb-3 text-right">Change</th>
-                    <th className="pb-3 text-right">% Change</th>
-                    <th className="pb-3 text-right">P/E</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-800/60">
-                  {data.indianStocks?.map((stk) => (
-                    <tr key={stk.symbol} className="hover:bg-zinc-800/40 transition-colors">
-                      <td className="py-3 font-bold text-amber-400">{stk.symbol}</td>
-                      <td className="py-3 font-sans text-gray-200">{stk.name}</td>
-                      <td className="py-3 text-right text-white font-bold">₹{stk.price}</td>
-                      <td className={`py-3 text-right ${stk.change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {stk.change >= 0 ? `+${stk.change}` : stk.change}
-                      </td>
-                      <td className={`py-3 text-right font-bold ${stk.percent >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {stk.percent >= 0 ? `+${stk.percent}%` : `${stk.percent}%`}
-                      </td>
-                      <td className="py-3 text-right text-gray-400">{stk.pe || '24.2'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           </div>
 
         </div>
 
-        {/* Right Col: International Indices & Gainers/Decliners (Col 4) */}
+        {/* Right Column: Gainers, Losers, Currency Matrix */}
         <div className="lg:col-span-4 space-y-6">
           
-          {/* Global Markets Overview */}
-          <div className="glass-card rounded-3xl p-6 border border-zinc-800">
-            <h3 className="font-serif text-lg font-bold text-white mb-4 flex items-center justify-between">
-              <span>International Indices</span>
-              <Globe className="w-4 h-4 text-amber-400" />
+          {/* Top Gainers */}
+          <div className="bg-white rounded-3xl p-6 border border-[#ded5c2] shadow-sm">
+            <h3 className="font-serif text-base font-bold text-[#1c1917] mb-4">
+              Top Equities Gainers
             </h3>
             <div className="space-y-3">
-              {data.globalIndices?.map((g) => (
-                <div
-                  key={g.id}
-                  className="p-3 rounded-2xl bg-zinc-950/60 border border-zinc-800 flex items-center justify-between text-xs"
-                >
+              {data.topGainers?.map((stock) => (
+                <div key={stock.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-[#faf7f2] border border-[#ded5c2] text-xs">
                   <div>
-                    <span className="font-bold text-white block">{g.name}</span>
-                    <span className="text-[10px] text-gray-500 font-mono">{g.region} • {g.symbol}</span>
+                    <span className="font-bold text-[#1c1917]">{stock.symbol}</span>
+                    <p className="text-[10px] text-[#786f63]">{stock.name}</p>
                   </div>
                   <div className="text-right font-mono">
-                    <span className="text-white font-bold block">{g.current?.toLocaleString()}</span>
-                    <span className={`text-[10px] font-bold ${g.percentChange >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-                      {g.percentChange >= 0 ? `+${g.percentChange}%` : `${g.percentChange}%`}
-                    </span>
+                    <span className="text-[#1c1917] font-semibold">₹{stock.price}</span>
+                    <span className="text-emerald-700 text-[10px] block font-bold">+{stock.percent}%</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Gainers & Losers Box */}
-          <div className="glass-card rounded-3xl p-6 border border-zinc-800">
-            <h3 className="font-serif text-lg font-bold text-white mb-4">
-              Top Gainers & Decliners
+          {/* Top Losers */}
+          <div className="bg-white rounded-3xl p-6 border border-[#ded5c2] shadow-sm">
+            <h3 className="font-serif text-base font-bold text-[#1c1917] mb-4">
+              Top Equities Decliners
             </h3>
-
-            <div className="space-y-2 mb-6">
-              <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">
-                Top Gainers
-              </span>
-              {data.topGainers?.map((g) => (
-                <div key={g.symbol} className="p-2.5 rounded-xl bg-zinc-950/60 border border-zinc-800 flex items-center justify-between text-xs font-mono">
-                  <span className="font-bold text-white">{g.symbol}</span>
-                  <span className="text-emerald-400 font-bold">+{g.percent}%</span>
+            <div className="space-y-3">
+              {data.topLosers?.map((stock) => (
+                <div key={stock.symbol} className="flex items-center justify-between p-3 rounded-2xl bg-[#faf7f2] border border-[#ded5c2] text-xs">
+                  <div>
+                    <span className="font-bold text-[#1c1917]">{stock.symbol}</span>
+                    <p className="text-[10px] text-[#786f63]">{stock.name}</p>
+                  </div>
+                  <div className="text-right font-mono">
+                    <span className="text-[#1c1917] font-semibold">₹{stock.price}</span>
+                    <span className="text-rose-700 text-[10px] block font-bold">{stock.percent}%</span>
+                  </div>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="space-y-2">
-              <span className="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">
-                Top Decliners
-              </span>
-              {data.topLosers?.map((l) => (
-                <div key={l.symbol} className="p-2.5 rounded-xl bg-zinc-950/60 border border-zinc-800 flex items-center justify-between text-xs font-mono">
-                  <span className="font-bold text-white">{l.symbol}</span>
-                  <span className="text-rose-400 font-bold">{l.percent}%</span>
+          {/* Currency Matrix */}
+          <div className="bg-white rounded-3xl p-6 border border-[#ded5c2] shadow-sm">
+            <h3 className="font-serif text-base font-bold text-[#1c1917] mb-4">
+              Forex Rates
+            </h3>
+            <div className="space-y-2 text-xs">
+              {data.currencies?.map((curr) => (
+                <div key={curr.symbol} className="flex items-center justify-between p-2.5 rounded-xl bg-[#faf7f2] border border-[#ded5c2]">
+                  <span className="font-bold text-[#1c1917]">{curr.symbol}</span>
+                  <div className="text-right font-mono">
+                    <span className="text-[#1c1917]">{curr.rate}</span>
+                    <span className={`text-[10px] ml-2 font-bold ${curr.percent >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
+                      {curr.percent >= 0 ? `+${curr.percent}%` : `${curr.percent}%`}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>

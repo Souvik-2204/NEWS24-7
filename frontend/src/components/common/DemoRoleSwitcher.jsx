@@ -21,20 +21,20 @@ export const DemoRoleSwitcher = () => {
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
-      {/* Popover Menu */}
+      {/* Popover Menu in Crisp White / Warm Beige */}
       {open && (
-        <div className="mb-3 w-80 bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/80 rounded-2xl shadow-2xl p-4 text-xs animate-fade-in text-gray-200">
-          <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+        <div className="mb-3 w-80 bg-white/98 backdrop-blur-xl border border-[#ded5c2] rounded-2xl shadow-2xl p-4 text-xs animate-fade-in text-[#1c1917]">
+          <div className="flex items-center justify-between pb-3 border-b border-[#ded5c2]">
             <div className="flex items-center space-x-2">
-              <Key className="w-4 h-4 text-amber-400" />
-              <span className="font-bold text-white uppercase tracking-wider text-[11px]">
+              <Key className="w-4 h-4 text-[#946638]" />
+              <span className="font-bold text-[#1c1917] uppercase tracking-wider text-[11px]">
                 Demo Role Switcher
               </span>
             </div>
-            <span className="text-[10px] text-gray-400">Instant Access</span>
+            <span className="text-[10px] text-[#786f63]">Instant Access</span>
           </div>
 
-          <p className="text-[11px] text-gray-400 my-2">
+          <p className="text-[11px] text-[#574f45] my-2">
             Click any role below to test real permissions, paywalls, and editorial workflows:
           </p>
 
@@ -48,38 +48,41 @@ export const DemoRoleSwitcher = () => {
                   onClick={() => handleSwitch(acc.email)}
                   className={`w-full text-left p-2.5 rounded-xl border transition-all flex items-start justify-between ${
                     isActive
-                      ? 'bg-amber-400/10 border-amber-400/50 text-white'
-                      : 'bg-zinc-800/60 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-gray-300'
+                      ? 'bg-[#f4efe4] border-[#946638] text-[#1c1917] shadow-sm ring-1 ring-[#946638]/30'
+                      : 'bg-[#faf8f4] border-[#ded5c2] hover:border-[#bda588] hover:bg-[#f2ece0] text-[#423b32]'
                   }`}
                 >
                   <div>
                     <div className="flex items-center space-x-1.5">
-                      <span className="font-semibold text-xs text-white">{acc.role}</span>
-                      <span className="text-[9px] px-1.5 py-0.2 rounded bg-zinc-700 text-amber-400 font-medium">
+                      <span className="font-bold text-xs text-[#1c1917]">{acc.role}</span>
+                      <span className="text-[9px] px-1.5 py-0.2 rounded bg-[#ebe2d3] text-[#784f27] font-semibold">
                         {acc.tier}
                       </span>
                     </div>
-                    <p className="text-[10px] text-gray-400 mt-0.5">{acc.name}</p>
-                    <p className="text-[9px] text-zinc-500 italic mt-0.5">{acc.desc}</p>
+                    <p className="text-[10px] text-[#786f63] mt-0.5 font-mono">{acc.email}</p>
                   </div>
-                  {isActive && <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />}
+                  {isActive && (
+                    <CheckCircle className="w-4 h-4 text-[#946638] shrink-0 mt-0.5" />
+                  )}
                 </button>
               );
             })}
           </div>
+
+          <div className="mt-3 pt-2 border-t border-[#ded5c2] text-[10px] text-[#786f63] flex items-center justify-between">
+            <span>Password for all: <strong>password123</strong></span>
+            <span>Switch takes ~100ms</span>
+          </div>
         </div>
       )}
 
-      {/* Floating Toggle Button */}
+      {/* Floating Pill Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center space-x-2 px-3.5 py-2.5 rounded-full bg-zinc-900/90 hover:bg-zinc-800 border border-amber-400/40 text-amber-400 hover:text-amber-300 shadow-xl transition-all duration-200 hover:scale-105 backdrop-blur-md"
-        title="Switch Demo Role"
+        className="flex items-center space-x-2 px-3.5 py-2 rounded-full bg-[#1c1917] hover:bg-[#2b251f] text-[#f8f6f0] border border-[#ded5c2] shadow-xl text-xs font-bold transition-all duration-200 hover:scale-105"
       >
-        <Users className="w-4 h-4 text-amber-400" />
-        <span className="text-xs font-semibold text-gray-200">
-          Role: <span className="text-amber-400">{user?.role || 'Guest'}</span>
-        </span>
+        <Users className="w-4 h-4 text-[#d4be9c]" />
+        <span>Role: <strong className="text-[#dfb88e]">{user?.role || 'Guest'}</strong></span>
         {open ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
       </button>
     </div>
