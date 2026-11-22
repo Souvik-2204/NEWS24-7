@@ -45,6 +45,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
     service: 'NEWS 24*7 Core API',
+    environment: process.env.VERCEL ? 'vercel-serverless' : config.nodeEnv,
     timestamp: new Date().toISOString()
   });
 });
@@ -58,12 +59,16 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Initialize server and background cron
-app.listen(config.port, () => {
-  console.log(`====================================================`);
-  console.log(`  NEWS 24*7 API Server running on port ${config.port}`);
-  console.log(`  Environment: ${config.nodeEnv}`);
-  console.log(`  Endpoints: http://localhost:${config.port}/api/health`);
-  console.log(`====================================================`);
-  initCronJobs();
-});
+// Initialize server and background cron when not running in Vercel Serverless
+if (!process.env.VERCEL) {
+  app.listen(config.port, () => {
+    console.log(`====================================================`);
+    console.log(`  NEWS 24*7 API Server running on port ${config.port}`);
+    console.log(`  Environment: ${config.nodeEnv}`);
+    console.log(`  Endpoints: http://localhost:${config.port}/api/health`);
+    console.log(`====================================================`);
+    initCronJobs();
+  });
+}
+
+export default app;
