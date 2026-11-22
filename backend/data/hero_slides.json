@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hero_1",
+    "title": "The response has been huge says Jenna Mekks on clean energy breakthrough.",
+    "subtitle": "Global delegations rally around unprecedented multilateral renewable treaty.",
+    "category": "POLITICS",
+    "author": "John Muller",
+    "authorRole": "Chief International Correspondent",
+    "readTime": "10 MIN READ",
+    "imageUrl": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1920&q=80",
+    "accentWord": "huge",
+    "active": true,
+    "articleId": "art_pol_01",
+    "nextPreview": {
+      "title": "Summit negotiators reach midnight breakthrough on sovereign fund rules.",
+      "readTime": "8 MIN READ",
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80"
+    }
+  },
+  {
+    "id": "hero_2",
+    "title": "Semiconductor Renaissance: India and Taiwan inaugurate $12B mega-fab complex.",
+    "subtitle": "2nm silicon fabrication hub marks pivotal shift in global technological autonomy.",
+    "category": "TECHNOLOGY",
+    "author": "Priya Sen Sharma",
+    "authorRole": "Technology & Chips Editor",
+    "readTime": "7 MIN READ",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
+    "accentWord": "Renaissance",
+    "active": true,
+    "articleId": "art_tech_01",
+    "nextPreview": {
+      "title": "NVIDIA and Tata launch sovereign AI superclusters across southern corridors.",
+      "readTime": "6 MIN READ",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80"
+    }
+  },
+  {
+    "id": "hero_3",
+    "title": "Dalal Street & Wall Street synchronize in record bull run as inflation cools.",
+    "subtitle": "NIFTY breaches 26,000 milestone while NASDAQ hits new apex on earnings beat.",
+    "category": "MARKETS",
+    "author": "Alistair Sterling",
+    "authorRole": "Senior Financial Editor",
+    "readTime": "5 MIN READ",
+    "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80",
+    "accentWord": "synchronize",
+    "active": true,
+    "articleId": "art_mkt_01",
+    "nextPreview": {
+      "title": "Central banks coordinate reserve shifts toward digital sovereign bonds.",
+      "readTime": "9 MIN READ",
+      "imageUrl": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=400&q=80"
+    }
+  },
+  {
+    "id": "hero_4",
+    "title": "Deep Space Telescope captures earliest atmospheric bio-signatures on exoplanet K2-18b.",
+    "subtitle": "Astrophysicists confirm methane and dimethyl sulfide signals with 99.4% certainty.",
+    "category": "SCIENCE",
+    "author": "Dr. Elena Rostova",
+    "authorRole": "Cosmology Bureau Chief",
+    "readTime": "12 MIN READ",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80",
+    "accentWord": "earliest",
+    "active": true,
+    "articleId": "art_sci_01",
+    "nextPreview": {
+      "title": "Quantum gravimetry sensors discover subterranean water reservoirs in Thar desert.",
+      "readTime": "6 MIN READ",
+      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80"
+    }
+  }
+]

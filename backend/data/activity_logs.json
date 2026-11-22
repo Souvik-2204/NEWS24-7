@@ -1,0 +1,282 @@
+[
+  {
+    "id": "log_1795347005319_rpdce",
+    "timestamp": "2026-11-22T11:30:05.319Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 5
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795346106563_k7b26",
+    "timestamp": "2026-11-22T11:15:06.564Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 2
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795345208810_kkezu",
+    "timestamp": "2026-11-22T11:00:08.810Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 3
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795344305353_t6mnc",
+    "timestamp": "2026-11-22T10:45:05.353Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 5
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795343920421_5tiad",
+    "timestamp": "2026-11-22T10:38:40.421Z",
+    "action": "SUBSCRIPTION_ACTIVATED",
+    "details": {
+      "planId": "gold",
+      "billingCycle": "annual",
+      "amount": 3800
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343920390_n0gnu",
+    "timestamp": "2026-11-22T10:38:40.390Z",
+    "action": "PAYMENT_FAILED_SIMULATION",
+    "details": {
+      "txId": "pay_tx_9203844yvy",
+      "planId": "gold",
+      "amount": 399
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343920372_syffs",
+    "timestamp": "2026-11-22T10:38:40.372Z",
+    "action": "EDITORIAL_REVIEW",
+    "details": {
+      "articleId": "art_1795343920337_sixuz",
+      "action": "published",
+      "reviewer": "Vikramaditya Roy"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343920344_7domk",
+    "timestamp": "2026-11-22T10:38:40.344Z",
+    "action": "ARTICLE_CREATED",
+    "details": {
+      "id": "art_1795343920337_sixuz",
+      "title": "Post-Quantum Encryption Protocols Adopted by Central Bank Consortium",
+      "status": "pending"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343920322_bnaj7",
+    "timestamp": "2026-11-22T10:38:40.322Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "author@news247.global",
+      "role": "Author/Journalist"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343920220_7wxoa",
+    "timestamp": "2026-11-22T10:38:40.220Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "admin@news247.global",
+      "role": "Super Admin"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343878075_w4acj",
+    "timestamp": "2026-11-22T10:37:58.075Z",
+    "action": "SUBSCRIPTION_ACTIVATED",
+    "details": {
+      "planId": "gold",
+      "billingCycle": "annual",
+      "amount": 3800
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343878043_lt1jr",
+    "timestamp": "2026-11-22T10:37:58.043Z",
+    "action": "PAYMENT_FAILED_SIMULATION",
+    "details": {
+      "txId": "pay_tx_878035oly5",
+      "planId": "gold",
+      "amount": 399
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343878022_ghijs",
+    "timestamp": "2026-11-22T10:37:58.022Z",
+    "action": "EDITORIAL_REVIEW",
+    "details": {
+      "articleId": "art_1795343877985_z0k7u",
+      "action": "published",
+      "reviewer": "Vikramaditya Roy"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343877993_ml8zs",
+    "timestamp": "2026-11-22T10:37:57.993Z",
+    "action": "ARTICLE_CREATED",
+    "details": {
+      "id": "art_1795343877985_z0k7u",
+      "title": "Post-Quantum Encryption Protocols Adopted by Central Bank Consortium",
+      "status": "pending"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343877968_qsl5p",
+    "timestamp": "2026-11-22T10:37:57.968Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "author@news247.global",
+      "role": "Author/Journalist"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343877865_luhnd",
+    "timestamp": "2026-11-22T10:37:57.865Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "admin@news247.global",
+      "role": "Super Admin"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343863554_vt55p",
+    "timestamp": "2026-11-22T10:37:43.554Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 1
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795343806681_8tlus",
+    "timestamp": "2026-11-22T10:36:46.681Z",
+    "action": "SUBSCRIPTION_ACTIVATED",
+    "details": {
+      "planId": "gold",
+      "billingCycle": "annual",
+      "amount": 3800
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343806656_eo6x2",
+    "timestamp": "2026-11-22T10:36:46.656Z",
+    "action": "PAYMENT_FAILED_SIMULATION",
+    "details": {
+      "txId": "pay_tx_806650k1rh",
+      "planId": "gold",
+      "amount": 399
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343806640_468ox",
+    "timestamp": "2026-11-22T10:36:46.640Z",
+    "action": "EDITORIAL_REVIEW",
+    "details": {
+      "articleId": "art_1795343806602_sfwuh",
+      "action": "published",
+      "reviewer": "Vikramaditya Roy"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343806610_g78sp",
+    "timestamp": "2026-11-22T10:36:46.610Z",
+    "action": "ARTICLE_CREATED",
+    "details": {
+      "id": "art_1795343806602_sfwuh",
+      "title": "Post-Quantum Encryption Protocols Adopted by Central Bank Consortium",
+      "status": "pending"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343806589_de2bc",
+    "timestamp": "2026-11-22T10:36:46.589Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "author@news247.global",
+      "role": "Author/Journalist"
+    },
+    "userId": "usr_author",
+    "role": "Author/Journalist"
+  },
+  {
+    "id": "log_1795343806483_5s3ab",
+    "timestamp": "2026-11-22T10:36:46.483Z",
+    "action": "USER_LOGIN",
+    "details": {
+      "email": "admin@news247.global",
+      "role": "Super Admin"
+    },
+    "userId": "usr_superadmin",
+    "role": "Super Admin"
+  },
+  {
+    "id": "log_1795343405211_xv008",
+    "timestamp": "2026-11-22T10:30:05.211Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 6
+    },
+    "userId": null,
+    "role": null
+  },
+  {
+    "id": "log_1795342810126_9ib2t",
+    "timestamp": "2026-11-22T10:20:10.126Z",
+    "action": "LIVE_NEWS_SYNC",
+    "details": {
+      "count": 28
+    },
+    "userId": null,
+    "role": null
+  }
+]

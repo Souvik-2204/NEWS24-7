@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sub_01",
+    "userId": "usr_subscriber",
+    "userName": "Devendra Singhania",
+    "userEmail": "subscriber@news247.global",
+    "planId": "gold",
+    "planName": "Gold All-Access VIP",
+    "billingCycle": "annual",
+    "amountPaid": 3800,
+    "currency": "INR",
+    "status": "active",
+    "startDate": "2026-02-01T00:00:00.000Z",
+    "expiryDate": "2027-02-01T00:00:00.000Z",
+    "paymentMethod": "UPI / NetBanking",
+    "autoRenew": true
+  },
+  {
+    "id": "sub_02",
+    "userId": "usr_sectioneditor",
+    "userName": "Rajesh Nambiar",
+    "userEmail": "section.editor@news247.global",
+    "planId": "silver",
+    "planName": "Silver Deep-Dive",
+    "billingCycle": "monthly",
+    "amountPaid": 199,
+    "currency": "INR",
+    "status": "active",
+    "startDate": "2026-02-15T00:00:00.000Z",
+    "expiryDate": "2026-03-15T00:00:00.000Z",
+    "paymentMethod": "Credit Card",
+    "autoRenew": true
+  },
+  {
+    "id": "sub_806672",
+    "userId": "usr_author",
+    "userName": "Priya Sen Sharma",
+    "userEmail": "author@news247.global",
+    "planId": "gold",
+    "planName": "Gold Tier Subscription",
+    "billingCycle": "annual",
+    "amountPaid": 3800,
+    "currency": "INR",
+    "status": "active",
+    "startDate": "2026-11-22T10:38:40.410Z",
+    "expiryDate": "2027-11-22T10:38:40.410Z",
+    "paymentMethod": "UPI",
+    "autoRenew": true
+  }
+]

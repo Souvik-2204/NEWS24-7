@@ -1,0 +1,12 @@
+[
+  { "id": "world", "name": "World", "slug": "world", "order": 1, "description": "Global affairs, geopolitics, and international relations" },
+  { "id": "india", "name": "India", "slug": "india", "order": 2, "description": "National news, governance, subcontinent developments" },
+  { "id": "politics", "name": "Politics", "slug": "politics", "order": 3, "description": "Political movements, elections, policy shifts, parliaments" },
+  { "id": "business", "name": "Business", "slug": "business", "order": 4, "description": "Global enterprise, startups, macroeconomic policies, corporate moves" },
+  { "id": "markets", "name": "Markets", "slug": "markets", "order": 5, "description": "Stock indices, commodities, forex, crypto, financial intelligence" },
+  { "id": "technology", "name": "Technology", "slug": "technology", "order": 6, "description": "Artificial Intelligence, semiconductors, cybersecurity, computing" },
+  { "id": "sports", "name": "Sports", "slug": "sports", "order": 7, "description": "Cricket, football, Olympics, motorsports, global championships" },
+  { "id": "entertainment", "name": "Entertainment", "slug": "entertainment", "order": 8, "description": "Cinema, television, culture, arts, literature" },
+  { "id": "science", "name": "Science", "slug": "science", "order": 9, "description": "Space exploration, biotech, quantum physics, environmental science" },
+  { "id": "opinion", "name": "Opinion", "slug": "opinion", "order": 10, "description": "Editorial columns, essays, intellectual debates, perspectives" }
+]

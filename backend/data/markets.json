@@ -1,0 +1,254 @@
+{
+  "lastUpdated": "2026-11-22T10:00:00Z",
+  "source": "Global Financial Intelligence Feed (NSE, BSE, NASDAQ, S&P)",
+  "currencies": [
+    { "symbol": "USD/INR", "rate": 86.82, "change": -0.14, "percent": -0.16 },
+    { "symbol": "EUR/INR", "rate": 91.45, "change": 0.28, "percent": 0.31 },
+    { "symbol": "GBP/INR", "rate": 109.12, "change": 0.45, "percent": 0.41 }
+  ],
+  "indianIndices": [
+    {
+      "id": "nifty50",
+      "symbol": "^NSEI",
+      "name": "NIFTY 50",
+      "exchange": "NSE",
+      "current": 25890.45,
+      "change": 182.35,
+      "percentChange": 0.71,
+      "high": 25940.10,
+      "low": 25710.20,
+      "volume": "3.84B",
+      "history": {
+        "1D": [
+          {"time": "09:15", "value": 25720}, {"time": "10:30", "value": 25765},
+          {"time": "11:45", "value": 25810}, {"time": "13:00", "value": 25790},
+          {"time": "14:15", "value": 25860}, {"time": "15:30", "value": 25890.45}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 25510}, {"time": "Tue", "value": 25620},
+          {"time": "Wed", "value": 25580}, {"time": "Thu", "value": 25740},
+          {"time": "Fri", "value": 25890.45}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 25100}, {"time": "Week 2", "value": 25350},
+          {"time": "Week 3", "value": 25600}, {"time": "Week 4", "value": 25890.45}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 22100}, {"time": "Q2", "value": 23400},
+          {"time": "Q3", "value": 24800}, {"time": "Q4", "value": 25890.45}
+        ]
+      }
+    },
+    {
+      "id": "sensex",
+      "symbol": "^BSESN",
+      "name": "BSE SENSEX",
+      "exchange": "BSE",
+      "current": 84920.80,
+      "change": 590.25,
+      "percentChange": 0.70,
+      "high": 85100.50,
+      "low": 84350.10,
+      "volume": "1.92B",
+      "history": {
+        "1D": [
+          {"time": "09:15", "value": 84380}, {"time": "10:30", "value": 84520},
+          {"time": "11:45", "value": 84690}, {"time": "13:00", "value": 84610},
+          {"time": "14:15", "value": 84830}, {"time": "15:30", "value": 84920.8}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 83800}, {"time": "Tue", "value": 84150},
+          {"time": "Wed", "value": 84020}, {"time": "Thu", "value": 84480},
+          {"time": "Fri", "value": 84920.8}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 82900}, {"time": "Week 2", "value": 83600},
+          {"time": "Week 3", "value": 84200}, {"time": "Week 4", "value": 84920.8}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 73200}, {"time": "Q2", "value": 77400},
+          {"time": "Q3", "value": 81900}, {"time": "Q4", "value": 84920.8}
+        ]
+      }
+    },
+    {
+      "id": "banknifty",
+      "symbol": "^NSEBANK",
+      "name": "BANK NIFTY",
+      "exchange": "NSE",
+      "current": 54210.15,
+      "change": 412.60,
+      "percentChange": 0.77,
+      "high": 54380.00,
+      "low": 53820.50,
+      "volume": "1.25B",
+      "history": {
+        "1D": [
+          {"time": "09:15", "value": 53850}, {"time": "10:30", "value": 54010},
+          {"time": "11:45", "value": 54120}, {"time": "13:00", "value": 54080},
+          {"time": "14:15", "value": 54180}, {"time": "15:30", "value": 54210.15}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 53200}, {"time": "Tue", "value": 53600},
+          {"time": "Wed", "value": 53550}, {"time": "Thu", "value": 53950},
+          {"time": "Fri", "value": 54210.15}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 52100}, {"time": "Week 2", "value": 52900},
+          {"time": "Week 3", "value": 53700}, {"time": "Week 4", "value": 54210.15}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 46800}, {"time": "Q2", "value": 49500},
+          {"time": "Q3", "value": 51800}, {"time": "Q4", "value": 54210.15}
+        ]
+      }
+    }
+  ],
+  "indianStocks": [
+    { "symbol": "RELIANCE", "name": "Reliance Industries", "price": 3045.20, "change": 24.80, "percent": 0.82, "pe": 26.4 },
+    { "symbol": "TCS", "name": "Tata Consultancy Services", "price": 4280.50, "change": 58.10, "percent": 1.38, "pe": 31.2 },
+    { "symbol": "HDFCBANK", "name": "HDFC Bank Ltd", "price": 1785.40, "change": 18.25, "percent": 1.03, "pe": 19.8 },
+    { "symbol": "INFY", "name": "Infosys Ltd", "price": 1920.10, "change": -12.40, "percent": -0.64, "pe": 28.5 },
+    { "symbol": "ICICIBANK", "name": "ICICI Bank Ltd", "price": 1310.75, "change": 14.50, "percent": 1.12, "pe": 18.2 }
+  ],
+  "globalIndices": [
+    {
+      "id": "nasdaq",
+      "symbol": "^IXIC",
+      "name": "NASDAQ Composite",
+      "region": "USA",
+      "current": 19845.20,
+      "change": 195.40,
+      "percentChange": 0.99,
+      "high": 19910.00,
+      "low": 19680.50,
+      "history": {
+        "1D": [
+          {"time": "09:30", "value": 19690}, {"time": "11:00", "value": 19740},
+          {"time": "13:00", "value": 19780}, {"time": "15:00", "value": 19810},
+          {"time": "16:00", "value": 19845.2}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 19400}, {"time": "Tue", "value": 19550},
+          {"time": "Wed", "value": 19620}, {"time": "Thu", "value": 19750},
+          {"time": "Fri", "value": 19845.2}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 19100}, {"time": "Week 2", "value": 19350},
+          {"time": "Week 3", "value": 19600}, {"time": "Week 4", "value": 19845.2}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 16200}, {"time": "Q2", "value": 17500},
+          {"time": "Q3", "value": 18900}, {"time": "Q4", "value": 19845.2}
+        ]
+      }
+    },
+    {
+      "id": "sp500",
+      "symbol": "^GSPC",
+      "name": "S&P 500",
+      "region": "USA",
+      "current": 5980.60,
+      "change": 38.20,
+      "percentChange": 0.64,
+      "high": 5995.00,
+      "low": 5945.10,
+      "history": {
+        "1D": [
+          {"time": "09:30", "value": 5948}, {"time": "11:00", "value": 5960},
+          {"time": "13:00", "value": 5972}, {"time": "15:00", "value": 5978},
+          {"time": "16:00", "value": 5980.6}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 5890}, {"time": "Tue", "value": 5920},
+          {"time": "Wed", "value": 5935}, {"time": "Thu", "value": 5960},
+          {"time": "Fri", "value": 5980.6}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 5810}, {"time": "Week 2", "value": 5880},
+          {"time": "Week 3", "value": 5930}, {"time": "Week 4", "value": 5980.6}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 5050}, {"time": "Q2", "value": 5350},
+          {"time": "Q3", "value": 5700}, {"time": "Q4", "value": 5980.6}
+        ]
+      }
+    },
+    {
+      "id": "dowjones",
+      "symbol": "^DJI",
+      "name": "DOW JONES",
+      "region": "USA",
+      "current": 43810.15,
+      "change": 145.80,
+      "percentChange": 0.33,
+      "high": 43920.00,
+      "low": 43680.00,
+      "history": {
+        "1D": [
+          {"time": "09:30", "value": 43690}, {"time": "11:00", "value": 43740},
+          {"time": "13:00", "value": 43760}, {"time": "15:00", "value": 43790},
+          {"time": "16:00", "value": 43810.15}
+        ],
+        "1W": [
+          {"time": "Mon", "value": 43400}, {"time": "Tue", "value": 43580},
+          {"time": "Wed", "value": 43620}, {"time": "Thu", "value": 43740},
+          {"time": "Fri", "value": 43810.15}
+        ],
+        "1M": [
+          {"time": "Week 1", "value": 42900}, {"time": "Week 2", "value": 43250},
+          {"time": "Week 3", "value": 43580}, {"time": "Week 4", "value": 43810.15}
+        ],
+        "1Y": [
+          {"time": "Q1", "value": 38800}, {"time": "Q2", "value": 40200},
+          {"time": "Q3", "value": 42100}, {"time": "Q4", "value": 43810.15}
+        ]
+      }
+    },
+    {
+      "id": "ftse100",
+      "symbol": "^FTSE",
+      "name": "FTSE 100",
+      "region": "UK",
+      "current": 8415.50,
+      "change": 32.10,
+      "percentChange": 0.38,
+      "high": 8440.00,
+      "low": 8390.00
+    },
+    {
+      "id": "dax",
+      "symbol": "^GDAXI",
+      "name": "DAX 40",
+      "region": "Germany",
+      "current": 19480.90,
+      "change": 112.40,
+      "percentChange": 0.58,
+      "high": 19520.00,
+      "low": 19390.00
+    },
+    {
+      "id": "nikkei225",
+      "symbol": "^N225",
+      "name": "NIKKEI 225",
+      "region": "Japan",
+      "current": 39120.40,
+      "change": 240.60,
+      "percentChange": 0.62,
+      "high": 39250.00,
+      "low": 38900.00
+    }
+  ],
+  "topGainers": [
+    { "symbol": "TATASTEEL", "name": "Tata Steel", "price": 168.40, "change": 8.20, "percent": 5.12 },
+    { "symbol": "NVDA", "name": "NVIDIA Corp", "price": 142.80, "change": 6.45, "percent": 4.73 },
+    { "symbol": "BHARTIARTL", "name": "Bharti Airtel", "price": 1620.00, "change": 61.50, "percent": 3.95 },
+    { "symbol": "MSFT", "name": "Microsoft Corp", "price": 448.20, "change": 12.80, "percent": 2.94 }
+  ],
+  "topLosers": [
+    { "symbol": "TITAN", "name": "Titan Company", "price": 3280.00, "change": -72.00, "percent": -2.15 },
+    { "symbol": "TSLA", "name": "Tesla Inc", "price": 284.10, "change": -5.90, "percent": -2.03 },
+    { "symbol": "BAJFINANCE", "name": "Bajaj Finance", "price": 6890.00, "change": -110.00, "percent": -1.57 },
+    { "symbol": "INTC", "name": "Intel Corp", "price": 23.40, "change": -0.35, "percent": -1.47 }
+  ]
+}

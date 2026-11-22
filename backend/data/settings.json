@@ -1,0 +1,16 @@
+{
+  "siteName": "NEWS 24*7",
+  "tagline": "The Global Chronicle & Financial Intelligence",
+  "heroRotationIntervalSeconds": 30,
+  "breakingTickerEnabled": true,
+  "liveRssSyncEnabled": true,
+  "rssRefreshMinutes": 15,
+  "plans": {
+    "bronze": { "monthly": 99, "annual": 950, "features": ["Ad-lite experience", "Standard editorial stories", "Daily market summary"] },
+    "silver": { "monthly": 199, "annual": 1900, "features": ["Ad-free reading", "Deep dive investigative journalism", "Real-time stock charts & indices", "Offline audio reader"] },
+    "gold": { "monthly": 399, "annual": 3800, "features": ["Unlimited VIP access", "All Silver features", "Exclusive Chief Editor briefings", "Wall Street & Dalal Street intelligence", "Early access newsletters", "Direct Q&A with journalists"] }
+  },
+  "marketApiEndpoint": "https://query1.finance.yahoo.com/v8/finance/chart/",
+  "contactEmail": "editorial@news247.global",
+  "bureauAddress": "The Press House, Connaught Place, New Delhi & 5th Avenue, New York"
+}

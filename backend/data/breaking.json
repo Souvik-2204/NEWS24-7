@@ -1,0 +1,34 @@
+[
+  {
+    "id": "brk_1",
+    "title": "Reserve Bank of India maintains repo rate at 6.5%, signals growth resilience amid global headwinds",
+    "priority": "high",
+    "category": "Markets",
+    "url": "/markets",
+    "createdAt": "2026-11-22T09:30:00Z"
+  },
+  {
+    "id": "brk_2",
+    "title": "Sensex surges 680 points to record highs led by banking and semiconductor rally",
+    "priority": "high",
+    "category": "Markets",
+    "url": "/markets",
+    "createdAt": "2026-11-22T09:45:00Z"
+  },
+  {
+    "id": "brk_3",
+    "title": "ISRO announces next-gen lunar outpost launch timeline in collaboration with international space consortium",
+    "priority": "medium",
+    "category": "Science",
+    "url": "/science",
+    "createdAt": "2026-11-22T10:15:00Z"
+  },
+  {
+    "id": "brk_4",
+    "title": "Global climate summit adopts binding maritime zero-emission corridors across Indo-Pacific",
+    "priority": "medium",
+    "category": "World",
+    "url": "/world",
+    "createdAt": "2026-11-22T11:00:00Z"
+  }
+]
